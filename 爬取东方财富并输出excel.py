@@ -17,7 +17,7 @@ class DFCF(object):
         self.rowsTitle = [ u'序号',u'股票号码',u'股票名称',u'最新价',u'涨跌幅',u'主力净额',u'主力净占比',u'超大单净额',u'超大单净占比',u'大单净流入',u'大单净占比',u'中单净流入',u'中单净占比',u'小单净流入',u'小单净占比',u'日期',u'涨跌额']
         for i in range(0,len(self.rowsTitle)):
             self.sheet1.write(0, i, self.rowsTitle[i], self.set_style('Times new Roman', 220, True))
-        self.f.save('e:\Elearning\gg.xls')
+        self.f.save('e:\Elearning\gg.xls') #使用.xls格式比较通用，.xlsx有时候会报错
     
     def set_style(self,name,height,bold=False):
         style = xlwt.XFStyle()  # 初始化样式
@@ -30,7 +30,7 @@ class DFCF(object):
         return style
     
     def getURL(self):
-        for i in range(3):
+        for i in range(73):
             url = "http://nufm.dfcfw.com/EM_Finance2014NumericApplication/JS.aspx?type=ct&st=(BalFlowMain)&sr=-1&p={}".format(i+1) + "&ps=50&js=var%20QvPvHhmY={pages:(pc),date:%222014-10-22%22,data:[(x)]}&token=894050c76af8597a853f5b408b759f5d&cmd=C._AB&sty=DCFFITA&rt=50804877"
             self.spiderPage(url)
 
