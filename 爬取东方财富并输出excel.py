@@ -30,7 +30,7 @@ class DFCF(object):
         return style
     
     def getURL(self):
-        for i in range(73):
+        for i in range(73)#总页数:
             url = "http://nufm.dfcfw.com/EM_Finance2014NumericApplication/JS.aspx?type=ct&st=(BalFlowMain)&sr=-1&p={}".format(i+1) + "&ps=50&js=var%20QvPvHhmY={pages:(pc),date:%222014-10-22%22,data:[(x)]}&token=894050c76af8597a853f5b408b759f5d&cmd=C._AB&sty=DCFFITA&rt=50804877"
             self.spiderPage(url)
 
